@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "bootstrap": "4.0.0-beta.2",
+    "glamor": "^2.20.40",
+    "glamorous": "^4.11.0",
     "gravatar-url": "^2.0.0",
     "jwt-decode": "^2.2.0",
     "normalizr": "^3.2.4",
@@ -14,6 +17,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
