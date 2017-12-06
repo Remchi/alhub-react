@@ -82,7 +82,7 @@ class LoginForm extends React.Component {
         </button>
 
         <small className="form-text text-center">
-          <Link to="/login">Sign up</Link> if you don't have an account<br />
+          <Link to="/signup">Sign up</Link> if you don't have an account<br />
           <Link to="/forgot_password">Forgot Password?</Link>
         </small>
       </form>
