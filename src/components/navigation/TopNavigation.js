@@ -14,7 +14,7 @@ import {
   DropdownItem
 } from "reactstrap";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { NavLink as RouterNavLink } from "react-router-dom";
 import gravatarUrl from "gravatar-url";
 import * as actions from "../../actions/auth";
 
@@ -30,14 +30,18 @@ class TopNavigation extends React.Component {
 
     return (
       <Navbar light expand="sm" color="faded">
-        <NavbarBrand tag={Link} to="/">
+        <NavbarBrand tag={RouterNavLink} activeClassName="active" to="/">
           ALHub
         </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink tag={Link} to="/dashboard">
+              <NavLink
+                tag={RouterNavLink}
+                activeClassName="active"
+                to="/dashboard"
+              >
                 Dashboard
               </NavLink>
             </NavItem>
@@ -77,6 +81,6 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { logout: actions.logout })(
-  TopNavigation
-);
+export default connect(mapStateToProps, { logout: actions.logout }, null, {
+  pure: false
+})(TopNavigation);
