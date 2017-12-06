@@ -10,7 +10,6 @@ class SignupForm extends React.Component {
       username: "",
       password: ""
     },
-    loading: false,
     errors: {}
   };
 
@@ -44,7 +43,7 @@ class SignupForm extends React.Component {
   };
 
   render() {
-    const { data, errors, loading } = this.state;
+    const { data, errors } = this.state;
 
     return (
       <form onSubmit={this.onSubmit}>
