@@ -1,12 +1,9 @@
 import React from "react";
-import { Message } from "semantic-ui-react";
 
 const ConfirmEmailMessage = () => (
-  <Message info>
-    <Message.Header>
-      Please, verify your email to unlock awesomeness
-    </Message.Header>
-  </Message>
+  <div className="alert alert-warning">
+    Please, verify your email to unlock awesomeness
+  </div>
 );
 
 export default ConfirmEmailMessage;
