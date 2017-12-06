@@ -30,12 +30,16 @@ class TopNavigation extends React.Component {
 
     return (
       <Navbar light expand="sm" color="faded">
-        <NavbarBrand href="/">ALHub</NavbarBrand>
+        <NavbarBrand tag={Link} to="/">
+          ALHub
+        </NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav navbar>
             <NavItem>
-              <NavLink href="/components/">My Games</NavLink>
+              <NavLink tag={Link} to="/dashboard">
+                Dashboard
+              </NavLink>
             </NavItem>
           </Nav>
           <Nav className="ml-auto" navbar>
