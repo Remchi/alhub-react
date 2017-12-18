@@ -15,7 +15,7 @@ export const login = credentials => dispatch =>
   api.user.login(credentials).then(user => {
     localStorage.bookwormJWT = user.token;
     setAuthorizationHeader(user.token);
-    dispatch(userLoggedIn(user));
+    dispatch(userLoggedIn({ ...user, loaded: true }));
   });
 
 export const logout = () => dispatch => {
