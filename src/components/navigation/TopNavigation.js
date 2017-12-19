@@ -16,7 +16,9 @@ import {
 import { connect } from "react-redux";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import gravatarUrl from "gravatar-url";
+import { FormattedMessage } from "react-intl";
 import * as actions from "../../actions/auth";
+import { setLocale } from "../../actions/locale";
 
 class TopNavigation extends React.Component {
   state = {
@@ -42,11 +44,21 @@ class TopNavigation extends React.Component {
                 activeClassName="active"
                 to="/dashboard"
               >
-                Dashboard
+                <FormattedMessage
+                  id="nav.dashboard"
+                  defaultMessage="Dashboard"
+                />
               </NavLink>
             </NavItem>
           </Nav>
           <Nav className="ml-auto" navbar>
+            <a role="button" onClick={() => this.props.setLocale("en")}>
+              EN
+            </a>{" "}
+            |
+            <a role="button" onClick={() => this.props.setLocale("ru")}>
+              RU
+            </a>
             <UncontrolledDropdown nav>
               <DropdownToggle nav>
                 <img
@@ -72,7 +84,8 @@ TopNavigation.propTypes = {
   user: PropTypes.shape({
     email: PropTypes.string.isRequired
   }).isRequired,
-  logout: PropTypes.func.isRequired
+  logout: PropTypes.func.isRequired,
+  setLocale: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -81,6 +94,11 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { logout: actions.logout }, null, {
-  pure: false
-})(TopNavigation);
+export default connect(
+  mapStateToProps,
+  { logout: actions.logout, setLocale },
+  null,
+  {
+    pure: false
+  }
+)(TopNavigation);
