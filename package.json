@@ -12,6 +12,7 @@
     "normalizr": "^3.2.4",
     "prop-types": "^15.6",
     "react": "^16.2.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.2.0",
     "react-intl": "^2.4.0",
     "react-loader": "^2.4.2",

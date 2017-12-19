@@ -14,6 +14,8 @@ import ResetPasswordPage from "./components/pages/ResetPasswordPage";
 import UserRoute from "./components/routes/UserRoute";
 import GuestRoute from "./components/routes/GuestRoute";
 import TopNavigation from "./components/navigation/TopNavigation";
+import CharactersPage from "./components/pages/CharactersPage";
+import NewCharacterPage from "./components/pages/NewCharacterPage";
 import { fetchCurrentUser } from "./actions/users";
 import messages from "./messages";
 
@@ -65,6 +67,18 @@ class App extends React.Component {
               path="/dashboard"
               exact
               component={DashboardPage}
+            />
+            <UserRoute
+              location={location}
+              path="/characters"
+              exact
+              component={CharactersPage}
+            />
+            <UserRoute
+              location={location}
+              path="/characters/new"
+              exact
+              component={NewCharacterPage}
             />
           </Loader>
         </div>
