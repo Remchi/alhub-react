@@ -28,7 +28,7 @@
     "validator": "^9.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -44,5 +44,5 @@
     "eslint-plugin-react": "^7.3.0",
     "prettier": "^1.9.1"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8082"
 }
