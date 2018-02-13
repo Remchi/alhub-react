@@ -1,17 +1,25 @@
-import { USER_FETCHED } from "../types";
-import api from "../api";
-import { userLoggedIn } from "./auth";
+import {
+  CREATE_USER_REQUEST,
+  CREATE_USER_FAILURE,
+  FETCH_CURRENT_USER_REQUEST,
+  FETCH_CURRENT_USER_SUCCESS
+} from "../types";
 
-export const userFetched = user => ({
-  type: USER_FETCHED,
+export const createUserRequest = user => ({
+  type: CREATE_USER_REQUEST,
   user
 });
 
-export const signup = data => dispatch =>
-  api.user.signup(data).then(user => {
-    localStorage.bookwormJWT = user.token;
-    dispatch(userLoggedIn(user));
-  });
+export const createUserFailure = errors => ({
+  type: CREATE_USER_FAILURE,
+  errors
+});
 
-export const fetchCurrentUser = () => dispatch =>
-  api.user.fetchCurrentUser().then(user => dispatch(userFetched(user)));
+export const fetchCurrentUserRequest = () => ({
+  type: FETCH_CURRENT_USER_REQUEST
+});
+
+export const fetchCurrentUserSuccess = user => ({
+  type: FETCH_CURRENT_USER_SUCCESS,
+  user
+});
